@@ -25,7 +25,7 @@ transporter.verify((error, success) => {
 const sendEmail = async (to, subject, text, html) => {
   try {
     const info = await transporter.sendMail({
-      from: `"Backend Ledger" <${process.env.EMAIL_USER}>`, // sender address
+      from: `"LedgerFlow" <${process.env.EMAIL_USER}>`, // sender address
       to, // list of receivers
       subject, // Subject line
       text, // plain text body
@@ -40,30 +40,30 @@ const sendEmail = async (to, subject, text, html) => {
 };
 
 async function sendRegistrationEmail(userEmail,name){
-    const subject='Welcome to Backend Ledger'
-    const text=`Hi ${name},\n\nThank you for registering at Backend Ledger! We're excited to have you on board.\n\nBest regards,\nThe Backend Ledger Team`
-    const html=`<p>Hi ${name},</p><p>Thank you for registering at Backend Ledger! We're excited to have you on board.</p><p>Best regards,<br>The Backend Ledger Team</p>`
+    const subject='Welcome to LedgerFlow'
+    const text=`Hi ${name},\n\nThank you for registering at LedgerFlow! We're excited to have you on board.\n\nBest regards,\nThe LedgerFlow Team`
+    const html=`<p>Hi ${name},</p><p>Thank you for registering at LedgerFlow! We're excited to have you on board.</p><p>Best regards,<br>The LedgerFlow Team</p>`
     await sendEmail(userEmail,subject,text,html)
 }
 
 async function sendLoginNotificationEmail(userEmail,name){
     const subject='New Login Detected'
-    const text=`Hi ${name},\n\nWe noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately.\n\nBest regards,\nThe Backend Ledger Team`
-    const html=`<p>Hi ${name},</p><p>We noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately.</p><p>Best regards,<br>The Backend Ledger Team</p>`
+    const text=`Hi ${name},\n\nWe noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately.\n\nBest regards,\nThe LedgerFlow Team`
+    const html=`<p>Hi ${name},</p><p>We noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately.</p><p>Best regards,<br>The LedgerFlow Team</p>`
     await sendEmail(userEmail,subject,text,html)
 }
 
 async function sendTransactionEmail(userEmail,name,amount,toAccount){
     const subject='Transaction Alert'
-    const text=`Hi ${name},\n\nA transaction of ₹${amount} has been made to account ${toAccount}. If this was you, you can safely ignore this email. If you did not authorize this transaction, please contact support immediately.\n\nBest regards,\nThe Backend Ledger Team`
-    const html=`<p>Hi ${name},</p><p>A transaction of ₹${amount} has been made to account ${toAccount}. If this was you, you can safely ignore this email. If you did not authorize this transaction, please contact support immediately.</p><p>Best regards,<br>The Backend Ledger Team</p>`
+    const text=`Hi ${name},\n\nA transaction of ₹${amount} has been made to account ${toAccount}. If this was you, you can safely ignore this email. If you did not authorize this transaction, please contact support immediately.\n\nBest regards,\nThe LedgerFlow Team`
+    const html=`<p>Hi ${name},</p><p>A transaction of ₹${amount} has been made to account ${toAccount}. If this was you, you can safely ignore this email. If you did not authorize this transaction, please contact support immediately.</p><p>Best regards,<br>The LedgerFlow Team</p>`
     await sendEmail(userEmail,subject,text,html)
 }
 
 async function sendTransactionFailureEmail(userEmail,name,amount,toAccount){
   const subject='Transaction failed'
   const text = `Hello ${name},\n\nWe regret to inform you that your transaction of ₹${amount} to account ${toAccount} is failed.`
-  const html=`<p>Hi ${name},</p><p>A transaction of ₹${amount}  to account ${toAccount} is failed. If this was you, you can safely ignore this email. If you did not authorize this transaction, please contact support immediately.</p><p>Best regards,<br>The Backend Ledger Team</p>`
+  const html=`<p>Hi ${name},</p><p>A transaction of ₹${amount}  to account ${toAccount} is failed. If this was you, you can safely ignore this email. If you did not authorize this transaction, please contact support immediately.</p><p>Best regards,<br>The LedgerFlow Team</p>`
   await sendEmail(userEmail,subject,text,html)
 }
 
