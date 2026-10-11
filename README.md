@@ -1,4 +1,4 @@
-# Backend Ledger API
+# LedgerFlow — Banking & Ledger API
 
 A secure and scalable backend system for managing financial accounts, transactions, and ledgers.
 
@@ -6,7 +6,7 @@ A secure and scalable backend system for managing financial accounts, transactio
 
 ## Overview
 
-The **Backend Ledger API** is a Node.js REST API built for core banking-style workflows such as:
+The **LedgerFlow API** is a Node.js REST API built for core banking-style workflows such as:
 
 - User authentication
 - Account management
