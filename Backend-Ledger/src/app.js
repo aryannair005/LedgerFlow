@@ -1,5 +1,5 @@
 /**
- * @fileoverview Main application entry point for the Bank Ledger API.
+ * @fileoverview Main application entry point for the LedgerFlow API.
  * This file sets up middleware, routes, and exports the Express app instance.
  */
 
@@ -33,7 +33,7 @@ app.use(cookieParser());
  */
 app.get("/", (req, res) => {
     res.status(200).json({
-        message: "Welcome to Bank Ledger API"
+        message: "Welcome to LedgerFlow API"
     });
 });
 
